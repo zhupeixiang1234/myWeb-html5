@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div style="text-align:center">
+  <button onclick="playPause()">播放/暂停</button>
+  <button onclick="makeBig()">放大</button>
+  <button onclick="makeSmall()">缩小</button>
+  <button onclick="makeNormal()">普通</button>
+  <button onclick="getPath()">获取路径</button>
+  <br>
+  <video id="video1" width="420">
+    <source src="D:/IdeaProject/myWeb-html5/static/video/test1.mp4" type="video/mp4">
+  </video>
+</div>
+
+<script>
+  var myVideo=document.getElementById("video1");
+
+  function getPath() {
+    var strFullPath=window.document.location.href;
+    var strPath=window.document.location.pathname;
+    alert(strFullPath+""+strPath)
+  }
+
+  function playPause()
+  {
+    if (myVideo.paused)
+      myVideo.play();
+    else
+      myVideo.pause();
+  }
+
+  function makeBig()
+  {
+    myVideo.width+=100;
+  }
+
+  function makeSmall()
+  {
+    myVideo.width-=100;
+  }
+
+  function makeNormal()
+  {
+    myVideo.width=420;
+  }
+</script>
+
+</body>
+</html>
